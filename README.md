@@ -2,6 +2,8 @@
 
 An Airbnb clone created using React and CSS.
 
+To use as a template: Fork/clone to your GitHub account
+
 Quick start:
 
 ```
