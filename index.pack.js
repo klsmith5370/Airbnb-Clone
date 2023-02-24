@@ -406,7 +406,11 @@ var _NavBar2 = _interopRequireDefault(_NavBar);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-    return _react2.default.createElement(_NavBar2.default, null);
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(_NavBar2.default, null)
+    );
 }
 
 /***/ }),
@@ -477,7 +481,7 @@ function NavBar() {
     return _react2.default.createElement(
         "nav",
         null,
-        _react2.default.createElement("img", { src: "./images/airbnb-logo.png", alt: "logo" })
+        _react2.default.createElement("img", { src: "../images/airbnb-logo.png", alt: "logo" })
     );
 }
 
