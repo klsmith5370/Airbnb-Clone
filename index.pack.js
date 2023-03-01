@@ -419,7 +419,14 @@ function App() {
         null,
         _react2.default.createElement(_NavBar2.default, null),
         _react2.default.createElement(_Hero2.default, null),
-        _react2.default.createElement(_Card2.default, null)
+        _react2.default.createElement(_Card2.default, {
+            img: "katie-zaferes.png",
+            rating: "5.0",
+            reviewCount: 6,
+            country: "United States",
+            title: "Life Lessons with Katie Zaferes",
+            price: 136
+        })
     );
 }
 
@@ -487,11 +494,11 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Card() {
+function Card(props) {
     return _react2.default.createElement(
         "div",
         { className: "card" },
-        _react2.default.createElement("img", { src: "../images/katie-zaferes.png", alt: "Katie Zaferes", className: "card--image" }),
+        _react2.default.createElement("img", { src: "../images/" + props.img, alt: "Katie Zaferes", className: "card--image" }),
         _react2.default.createElement(
             "div",
             { className: "card--stats" },
@@ -499,23 +506,25 @@ function Card() {
             _react2.default.createElement(
                 "span",
                 null,
-                "5.0"
+                props.rating
             ),
             _react2.default.createElement(
                 "span",
                 { className: "gray" },
-                "(6) * "
+                "(",
+                props.reviewCount,
+                ") *"
             ),
             _react2.default.createElement(
                 "span",
                 { className: "gray" },
-                "USA"
+                props.country
             )
         ),
         _react2.default.createElement(
             "p",
             null,
-            "Life lessons with Katie Zaferes"
+            props.title
         ),
         _react2.default.createElement(
             "p",
@@ -523,7 +532,8 @@ function Card() {
             _react2.default.createElement(
                 "strong",
                 null,
-                "From $136"
+                "From $",
+                props.price
             ),
             " / per person"
         )
