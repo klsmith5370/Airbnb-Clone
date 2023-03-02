@@ -13,6 +13,7 @@ export default function App() {
             coverImg={experience.coverImg} 
             stats={experience.stats}
             location={experience.location}
+            openSpots={experience.openSpots}
             
             />)
     })
