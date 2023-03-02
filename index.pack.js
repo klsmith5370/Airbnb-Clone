@@ -421,13 +421,7 @@ function App() {
     var experienceData = _data2.default.map(function (experience) {
         return _react2.default.createElement(_Card2.default, {
             key: experience.id,
-            title: experience.title,
-            price: experience.price,
-            coverImg: experience.coverImg,
-            stats: experience.stats,
-            location: experience.location,
-            openSpots: experience.openSpots
-
+            experience: experience
         });
     });
     return _react2.default.createElement(
@@ -509,9 +503,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Card(props) {
     var badgeText = void 0;
-    if (props.openSpots === 0) {
+    if (props.experience.openSpots === 0) {
         badgeText = "SOLD OUT";
-    } else if (props.location === "Online") {
+    } else if (props.experience.location === "Online") {
         badgeText = "ONLINE";
     }
 
@@ -523,7 +517,7 @@ function Card(props) {
             { className: "card--badge" },
             badgeText
         ),
-        _react2.default.createElement("img", { src: "../images/" + props.coverImg, alt: "cover image", className: "card--image" }),
+        _react2.default.createElement("img", { src: "../images/" + props.experience.coverImg, alt: "cover image", className: "card--image" }),
         _react2.default.createElement(
             "div",
             { className: "card--stats" },
@@ -531,25 +525,25 @@ function Card(props) {
             _react2.default.createElement(
                 "span",
                 null,
-                props.stats.rating
+                props.experience.stats.rating
             ),
             _react2.default.createElement(
                 "span",
                 { className: "gray" },
                 "(",
-                props.stats.reviewCount,
+                props.experience.stats.reviewCount,
                 ") * "
             ),
             _react2.default.createElement(
                 "span",
                 { className: "gray" },
-                props.location
+                props.experience.location
             )
         ),
         _react2.default.createElement(
             "p",
             { className: "card--title" },
-            props.title
+            props.experience.title
         ),
         _react2.default.createElement(
             "p",
@@ -558,7 +552,7 @@ function Card(props) {
                 "strong",
                 null,
                 "From $",
-                props.price
+                props.experience.price
             ),
             " / per person"
         )

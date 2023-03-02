@@ -8,13 +8,7 @@ export default function App() {
     const experienceData = data.map((experience) => {
         return (<Card 
             key={experience.id}
-            title={experience.title} 
-            price={experience.price} 
-            coverImg={experience.coverImg} 
-            stats={experience.stats}
-            location={experience.location}
-            openSpots={experience.openSpots}
-            
+            experience={experience}
             />)
     })
     return (
